@@ -1,0 +1,29 @@
+<section class="sk-module" id="skills-workshop" aria-labelledby="sk-title">
+ <div class="sk-heading"><div><div class="sk-kicker"><svg class="icon" aria-hidden="true"><use href="#i-repeat"/></svg> HANDS-ON / 우리 팀의 작성 절차를 스킬로</div><h3 id="sk-title">한 번 잘한 일을, 다음에도 같은 기준으로 만듭니다.</h3><p>오늘 만든 회의 후속 정리 방식을 재사용할 스킬 초안으로 바꿉니다.</p></div></div>
+ <div class="sk-definition"><div><span>한 번의 요청</span><b>“이 회의메모를 정리해줘.”</b></div><i aria-hidden="true">→</i><div><span>재사용할 절차</span><b>입력 + 분류 기준 + 결과 형식 + 검토</b><small>스킬은 모델을 새로 학습시키는 작업이 아니라 업무 지침을 재사용하는 방법입니다.</small></div></div>
+ <div class="sk-step-nav" role="group" aria-label="스킬 만들기 단계"><button type="button" data-sk-step="0" aria-pressed="true" aria-controls="sk-stage"><span>01</span>업무 좁히기</button><button type="button" data-sk-step="1" aria-pressed="false" aria-controls="sk-stage"><span>02</span>만들어 달라 요청</button><button type="button" data-sk-step="2" aria-pressed="false" aria-controls="sk-stage"><span>03</span>절차 검토</button><button type="button" data-sk-step="3" aria-pressed="false" aria-controls="sk-stage"><span>04</span>세 가지 테스트</button><button type="button" data-sk-step="4" aria-pressed="false" aria-controls="sk-stage"><span>05</span>활성화·재사용</button><button type="button" data-sk-step="5" aria-pressed="false" aria-controls="sk-stage"><span>06</span>팀에서 검증</button></div>
+ <div class="sk-stage" id="sk-stage" aria-live="polite"><div class="sk-stage-label">01 / 업무를 작게 정합니다.</div><h4>회의메모를 정리하는 한 가지 일</h4><div class="sk-scope-grid"><div><span class="sk-token">입력</span><b>지정한 회의메모·정책</b><p>어떤 자료를 읽어야 하는지 정합니다.</p></div><div><span class="sk-token">결과</span><b>결정·과제 표·미확인 사항</b><p>완료된 결과의 모양을 먼저 정합니다.</p></div></div><p class="sk-stage-note">주간 보고·시장 조사·고객 발송을 한 스킬에 한꺼번에 넣지 않습니다.</p></div>
+ <div class="sk-maker"><div class="sk-maker-heading"><h4>제작을 시작할 요청</h4><div class="sk-surface" role="group" aria-label="스킬 제작 환경"><button type="button" data-sk-surface="chatgpt" aria-pressed="true">ChatGPT</button><button type="button" data-sk-surface="codex" aria-pressed="false">Codex</button></div></div><div class="promptbox sk-request"><div class="prompt-top"><span>직접 붙여넣을 예시 · 계정에서 제작 기능을 확인하세요</span><button class="copy" type="button">복사</button></div><pre id="sk-maker-prompt">@skill-creator
+회의메모를 후속 실행계획으로 정리하는 스킬 초안을 만들어줘.
+입력: 내가 지정한 회의메모와 관련 정책.
+절차: 확정 결정·검토 아이디어·과제·미확인 사항을 구분한다.
+결과: 요약과 과제 표(업무·담당·기한·상태·근거).
+검토: 기록에 없는 담당·기한·원인은 미정/미확인으로 남긴다.
+이 작업의 범위는 검토할 초안 작성이다. 메일 발송이나 일정 등록을 덧붙이지 않는다.
+우선 지침만 있는 간단한 버전으로 만들고, 정상 입력·기한 누락·관계없는 요청의 테스트 방법을 제안해줘.</pre></div></div>
+ <div class="sk-test-section"><div class="sk-test-heading"><h4>만들었으면, 다른 입력으로 검증합니다.</h4><span>테스트는 예시 문구보다 판단 기준을 확인</span></div><div class="sk-test-tabs" role="group" aria-label="스킬 테스트 사례"><button type="button" data-sk-case="normal" aria-pressed="true">A · 정상 입력</button><button type="button" data-sk-case="missing" aria-pressed="false">B · 기한 누락</button><button type="button" data-sk-case="unrelated" aria-pressed="false">C · 관계없는 요청</button></div><div class="sk-test-board" id="sk-test-board" aria-live="polite"><div><span>테스트 입력</span><p id="sk-test-input">“재무 담당은 11월 4일까지 실적표를 공유한다. 영업팀장은 11월 5일까지 개선안 2개를 정리한다.”</p></div><i aria-hidden="true">→</i><div><span>기대하는 결과</span><p id="sk-test-expected">담당과 기한이 그대로 유지된 과제 표. 추가 근거 없는 원인은 미확인으로 표시.</p></div></div></div>
+ <details class="sk-advanced"><summary>파일 구조로 이해하기 · SKILL.md 예제와 다운로드</summary><div class="sk-file-grid"><div class="sk-file-tree"><b>meeting-followup-skill/</b><span>├─ SKILL.md <em>이름·적용 상황·업무 절차</em></span><span>└─ references/</span><span class="sk-indent">├─ example-input.txt <em>연습 입력</em></span><span class="sk-indent">└─ expected-checks.txt <em>검토 기준</em></span></div><div class="sk-file-preview"><span>SKILL.md · 핵심 구조</span><pre>---
+name: meeting-followup-skill
+description: 회의메모를 결정·후속 과제·미확인 사항으로 정리할 때 사용한다.
+---
+
+# 회의 후속 정리
+1. 지정한 자료만 읽는다.
+2. 결정·아이디어·과제를 구분한다.
+3. 없는 담당·기한은 미정으로 남긴다.
+4. 근거와 함께 검토용 초안을 만든다.</pre></div></div><p class="sk-detail-note">폴더와 파일은 교육용 원본입니다. 내려받기만 해서는 등록되거나 실행되지 않습니다. 기본 제작은 자연어로 시작하고, 파일 기반 등록은 사용하는 환경의 설치 절차를 따릅니다.</p><div class="sk-downloads"><a href="downloads/meeting-followup-skill.zip" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>스킬 예제 ZIP</a><a href="downloads/meeting-followup-skill/SKILL.md" download>SKILL.md 보기·저장</a><a href="downloads/meeting-followup-skill/references/expected-checks.txt" download>테스트 검토 기준</a></div></details>
+ <div class="sk-sharing"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><div><b>Project 공유와 스킬 배포는 별도로 확인합니다.</b><p>개인 스킬이 Project 공유만으로 동료에게 자동 등록되지는 않습니다. 지원되는 워크스페이스 스킬 공유 또는 플러그인 배포 경로를 확인하고, 동료가 사용할 수 있는 스킬·자료·연결 앱을 각각 점검합니다.</p></div></div>
+ <div class="sk-finish"><b>완료 기준</b><span>입력과 결과를 설명할 수 있다 · 기한 누락을 미정으로 처리한다 · 관계없는 요청과 구분한다 · 동료가 같은 기준으로 재현한다</span></div>
+ <p class="sk-caption">위 화면은 제작 과정을 설명하는 교육용 모식도입니다. 독립 스킬과 플러그인에 포함된 스킬은 지원 환경이 다르므로 실제 계정의 등록·활성화·공유 기능을 확인합니다. <a href="https://learn.chatgpt.com/docs/build-skills" target="_blank" rel="noopener noreferrer">스킬 제작</a> · <a href="https://learn.chatgpt.com/docs/skills-and-plugins" target="_blank" rel="noopener noreferrer">Skills &amp; Plugins</a> · <a href="https://learn.chatgpt.com/docs/enterprise/skills" target="_blank" rel="noopener noreferrer">공유·관리 범위</a></p>
+ <div class="sk-print-summary"><b>제작 순서:</b> 한 업무 선택 → 제작 요청 → 입력·절차·출력 검토 → 정상/누락/비관련 테스트 → 등록·활성화 확인 → 동료 재현·버전 관리</div>
+</section>
