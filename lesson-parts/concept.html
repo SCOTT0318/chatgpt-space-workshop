@@ -1,0 +1,32 @@
+<section class="lc-module" id="lv-concept-map" aria-labelledby="lv-concept-map-title">
+ <div class="lc-kicker"><svg class="icon" aria-hidden="true"><use href="#i-diagram"/></svg>개념 그림 01 · 어디에서 일하고, 어디에 남길까?</div>
+ <h3 id="lv-concept-map-title">ChatGPT가 일하는 곳과 결과가 남는 곳</h3>
+ <p class="lc-intro">아래 흐름을 읽어 보세요. <b>Work는 작업 방식</b>이고, <b>Space는 저장된 작업을 모으는 영역</b>입니다.</p>
+ <div class="lc-workspace"><div class="lc-workspace-label"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><b>Workspace</b><span>로그인한 개인·조직 환경 · 멤버와 정책, 사용 가능한 도구</span></div>
+  <div class="lc-context"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><div><b>Project · 이 업무의 맥락</b><span>관련 채팅 + 자료 + 지침을 묶어 여러 작업에 활용</span></div><span class="lc-context-feed">작업에 필요한 맥락을 제공 ↓</span></div>
+  <ol class="lc-map-flow" aria-label="입력 자료에서 검토와 공유까지 이어지는 업무 흐름">
+   <li><span class="lc-step">01 · 입력</span><svg class="icon lc-large-icon" aria-hidden="true"><use href="#i-file"/></svg><h4>무엇을 보고 일할까?</h4><div class="lc-chips"><span>회의메모</span><span>매출 CSV</span><span>정책 문서</span></div><p>사용할 자료와<br>확인할 범위를 지정</p></li>
+   <li class="lc-work-node"><span class="lc-step">02 · 작업</span><svg class="icon lc-large-icon" aria-hidden="true"><use href="#i-spark"/></svg><h4>Chat / Work</h4><p><b>Chat</b> 질문·탐색·짧은 수정<br><b>Work</b> 여러 단계를 거쳐<br>검토할 결과물 완성</p></li>
+   <li><span class="lc-step">03 · 저장·정리</span><svg class="icon lc-large-icon" aria-hidden="true"><use href="#i-folder"/></svg><h4>Space의 결과물</h4><div class="lc-outputs"><span><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Page</span><span><svg class="icon" aria-hidden="true"><use href="#i-table"/></svg>Sheet</span><span><svg class="icon" aria-hidden="true"><use href="#i-slides"/></svg>Slides</span><span><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Sites</span></div><p>Page는 함께 편집하는 문서<br>개별 space는 주제별 페이지 모음</p></li>
+   <li class="lc-review-node"><span class="lc-step">04 · 사람이 확인</span><svg class="icon lc-large-icon" aria-hidden="true"><use href="#i-shield"/></svg><h4>검토 → 공유·사용</h4><p>숫자·날짜·근거 대조<br>담당·기한 확인<br>공유 대상과 권한 선택</p><span class="lc-check-pill">다음 업무에 재사용</span></li>
+  </ol>
+ </div>
+ <div class="lc-reading"><b>그림 읽기</b><span>“매출 CSV를 근거로 Work에서 분석하고 → 검산할 실적표와 요약 Page를 만들고 → Space에서 찾아 팀과 검토한다.”</span></div>
+ <p class="lc-caption">개념을 설명하는 업무 흐름 예시입니다. 메뉴 배치나 자동 저장·공유를 보장하는 화면은 아닙니다. 각 결과의 제공 형태와 접근 권한은 실제 계정에서 확인합니다.</p>
+</section>
+
+<section class="lc-module" id="lv-concept-prompt" aria-labelledby="lv-concept-prompt-title">
+ <div class="lc-kicker"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>개념 그림 02 · 좋은 요청에는 어떤 정보가 있을까?</div>
+ <h3 id="lv-concept-prompt-title">한 문장의 요청을 다섯 부분으로 펼쳐봅니다.</h3>
+ <p class="lc-intro">각 문장을 누르면 <b>왜 이 정보가 필요한지</b> 볼 수 있습니다. 모든 요청에 다섯 칸을 채울 필요는 없으며, 결과를 바꾸는 정보를 넣습니다.</p>
+ <div class="lc-prompt-layout"><div class="lc-prompt-sheet" role="group" aria-label="프롬프트 구성요소 선택">
+  <div class="lc-sheet-heading"><span class="lc-dot"></span><span class="lc-dot"></span><span class="lc-dot"></span><b>한빛오피스 · 실행계획 요청</b></div>
+  <button type="button" class="lc-prompt-part lc-purpose" data-lc-part="purpose" aria-pressed="true"><span class="lc-part-label">01 목적</span><span>영업팀장이 다음 주 실행 우선순위를 정할 수 있게 정리해줘.</span></button>
+  <button type="button" class="lc-prompt-part lc-source" data-lc-part="source" aria-pressed="false"><span class="lc-part-label">02 근거</span><span>회의메모·검산된 매출표·고객문의·사내정책만 사용해줘.</span></button>
+  <button type="button" class="lc-prompt-part lc-output" data-lc-part="output" aria-pressed="false"><span class="lc-part-label">03 결과</span><span>1쪽 요약 Page와 과제·담당·기한·근거가 있는 표로 만들어줘.</span></button>
+  <button type="button" class="lc-prompt-part lc-standard" data-lc-part="standard" aria-pressed="false"><span class="lc-part-label">04 기준</span><span>기록에 없는 담당·기한·원인은 미정 또는 미확인으로 남겨줘.</span></button>
+  <button type="button" class="lc-prompt-part lc-review" data-lc-part="review" aria-pressed="false"><span class="lc-part-label">05 검토</span><span>고객 답변은 초안으로 작성하고, 발송 전에 담당자가 확인하게 해줘.</span></button>
+ </div><aside class="lc-explainer" aria-live="polite" aria-atomic="true"><span class="lc-explainer-number" id="lv-concept-part-number">01</span><h4 id="lv-concept-part-title">목적 · 누가 무엇을 결정하나요?</h4><p id="lv-concept-part-why">청중과 필요한 결정을 알려주면, 같은 자료도 그 사람이 사용할 수 있는 순서와 깊이로 정리할 수 있습니다.</p><div class="lc-explainer-example"><b>이 정보가 없으면?</b><p id="lv-concept-part-without">누구에게 필요한지 모르는 일반적인 요약으로 끝나기 쉽습니다.</p></div></aside></div>
+ <div class="lc-compare"><div><span>막연한 요청</span><p>“이 자료 정리해줘.”</p></div><span class="lc-compare-arrow" aria-hidden="true">→</span><div><span>목적과 완료 기준이 있는 요청</span><p>“영업팀장이 우선순위를 정하도록,<br>검산된 근거로 요약과 과제 표를 만들어줘.”</p></div></div>
+ <p class="lc-caption">프롬프트와 결과물은 교육용 예시입니다. 실제 숫자와 정책 판단은 원본으로 대조합니다.</p>
+</section>

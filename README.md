@@ -6,7 +6,10 @@
 
 ## 포함 내용
 
-- 180분 운영표와 도넛형 일정 그래픽
+- Chat·Work·Project·Space 관계도와 5요소 프롬프트 해부도
+- 6단계 사용 화면 모식도와 조작별 설명
+- 회의메모 → 실행계획 Page 전후 비교, 5장 발표자료 스토리보드
+- 원본·Page·Site 권한 경계와 문서 지침·실제 예약 비교 도식
 - 20개 기능·연결 워크플로 안내, 검색과 분류
 - 4개 업무의 입력 → AI 작업 → 사람 검토 → 결과 흐름도
 - 중복 제거 전후의 매출·목표 비교 차트와 계산기
@@ -25,6 +28,8 @@
 빌드 도구 없이 동작하는 정적 사이트입니다. HTML·CSS·JavaScript·실습 자료는 `index.html`에 포함되어 있고 아이콘과 공유 이미지는 `assets/`에 있습니다. GitHub Pages의 `main` 브랜치 루트(`/`)를 게시 소스로 사용합니다. 이후 변경 사항도 해당 브랜치에 반영하면 갱신됩니다.
 
 - `index.html`: 교육 본문과 인터랙션
+- `lesson-parts/`: 수업 내용용 시각 모듈의 원본 HTML·CSS·JS
+- `scripts/build_lessons.py`: 수정한 모듈을 본문에 반영하는 재생성 스크립트
 - `assets/`: SVG 아이콘·PNG/ICO 파비콘·공유 이미지
 - `site.webmanifest`: 홈 화면용 이름·아이콘
 - `404.html`, `robots.txt`, `sitemap.xml`: 웹 기본 설정
