@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scott0318.github.io/chatgpt-space-workshop/sitemap.xml
